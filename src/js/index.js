@@ -1,5 +1,4 @@
 import '../scss/index.scss'
-import './util'
-import 'normalize.css'
-var a;
-document.body.appendChild('123')
+import '../scss/abc.scss'
+import '../scss/css.css'
+// import 'normalize.css'
