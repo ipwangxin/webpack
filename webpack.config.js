@@ -9,18 +9,21 @@ module.exports = {
     },
     output: {
         filename: 'bundle[hash].js',
-        publicPath:"/dist/",
+        //publicPath:"/",
         path: path.resolve(__dirname, 'dist')
     },
-    devtool: 'inline-source-map',
+    devtool: 'inline-source-map',   //源文件报错
     devServer: {
-        hot:true,
-        open: true
+        hot:true,          //开启HRM
+        inline: true,      //开启热加载
+        open: true,         //浏览器启动
+        port: 8111
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Output Management'
+            title: 'Output Management',
+            template: './src/index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],

@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "server.js",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --config ./webpack/webpack.prod.js",
+    "dev": "webpack-dev-server",
+    "start": "npm run dev"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
