@@ -1,6 +1,6 @@
 # webpack的PC端多页面项目
 
-# 搭建一个webpack的多页面的应用
+## 搭建一个webpack的多页面的应用
 采用extract-text-webpack-plugin插件将css单独打包并注入到同名的html文件中
 
 ### webpack的学习
