@@ -16,8 +16,8 @@ npm i
 
 ###### 项目启动
 ```js
-> webpack-dev-server  
-> npm start
+ webpack-dev-server     or
+ npm start
 ```
 ###### 打包
 >  npm run build
