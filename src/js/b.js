@@ -1,1 +1,2 @@
-var t;
+import '../scss/abc.scss'
+alert('b')
