@@ -10,8 +10,8 @@ yarn  or
 npm i
 ```
 ###### 项目结构说明
-*src 为源文件。  
-*dist为打包目录。
+* src 为源文件。  
+* dist为打包目录。
 
 ###### 项目启动
 >  webpack-dev-server   or    npm start
