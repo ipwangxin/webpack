@@ -7,6 +7,8 @@ const webpack = require('webpack');
 const getJsEntry = require('./webpack/util/getFile.util').getJsEntry();
 const getHtmlConf = require('./webpack/util/getFile.util').getHtmlConf();
 
+const uglify = require('uglifyjs-webpack-plugin');
+
 
 module.exports = {
     entry: getJsEntry,
@@ -24,12 +26,15 @@ module.exports = {
         contentBase: './dist',
     },
     plugins: [
+        //html入口文件
         ...getHtmlConf,
+        //清空dist文件夹
         new CleanWebpackPlugin(['dist']),
-        // new HtmlWebpackPlugin({
-        //     title: 'Output Management',
-        //     template: 'html-withimg-loader!./src/index.html'
-        // }),
+        //调试热更新插件
+        new webpack.HotModuleReplacementPlugin(),
+        //开启js压缩
+        new uglify(),
+        //css额外打包
         ExtractCss,
 
     ],
@@ -39,7 +44,11 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: [
-                        "css-loader",
+                        {loader:"css-loader",
+                        options:{
+                            //css压缩
+                            minimize: true 
+                        }},
                         "postcss-loader",
                         "sass-loader"
                     ]
@@ -72,6 +81,9 @@ module.exports = {
                     // options: {
                     //     presets: ['env']
                     // }
+                    query: {
+                        presets: ['react', 'es2015']//支持react jsx和ES6语法编译
+                      }
                 }
             }
         ]

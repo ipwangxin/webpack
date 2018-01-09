@@ -3,6 +3,12 @@ import '../scss/abc.scss'
 import '../scss/css.css'
 import '../assets/images/1223.jpg'
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// Render the main component into the dom
+ReactDOM.render(<div>div</div>, document.getElementById('app'));
+
 // import 'normalize.css'；
 console.table({
     a:[1,2,4,5],

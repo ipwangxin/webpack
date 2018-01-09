@@ -14,14 +14,13 @@ npm i
 * src 为源文件。  
 * dist为打包目录。
 
-###### 项目启动
+###### 项目启动o
 ```js
  webpack-dev-server     or
  npm start
 ```
 ###### 打包
 >  npm run build
-
 
 ###### 注意
 独立页面的html必须要放在src根目录下
