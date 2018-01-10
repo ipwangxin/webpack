@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --watch",
     "start": "npm run dev"
   },
   "devDependencies": {
@@ -30,6 +30,8 @@
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
+    "echarts": "^3.8.5",
+    "echarts-for-react": "^2.0.4",
     "normalize-css": "^2.3.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"

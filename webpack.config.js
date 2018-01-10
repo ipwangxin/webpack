@@ -17,7 +17,7 @@ module.exports = {
         //publicPath:"/",
         path: path.resolve(process.cwd(), 'dist')
     },
-    devtool: 'inline-source-map', //源文件报错
+    devtool: 'source-map', //源文件报错
     devServer: {
         hot: true, //开启HRM
         inline: true, //开启热加载
@@ -33,7 +33,7 @@ module.exports = {
         //调试热更新插件
         new webpack.HotModuleReplacementPlugin(),
         //开启js压缩
-        new uglify(),
+        //new uglify(),
         //css额外打包
         ExtractCss,
 

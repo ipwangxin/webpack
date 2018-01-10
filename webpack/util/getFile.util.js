@@ -37,7 +37,6 @@ const html_plugins = function () {
   //console.log(entryHtml,jsDir)
   let r = []
   let entriesFiles = entries()
-  console.log(entriesFiles)
   for (let i = 0; i < entryHtml.length; i++) {
     let filePath = entryHtml[i];
     let filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'));
@@ -58,7 +57,6 @@ const html_plugins = function () {
   }
   return r
 }
-console.log(JSON.stringify(html_plugins()))
 
 module.exports = {
   getHtmlConf: html_plugins,
