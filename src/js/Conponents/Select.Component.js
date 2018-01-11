@@ -36,7 +36,7 @@ export default class SelectComponent extends React.Component {
     }
     choiceOption(e) {
         console.log(13)
-        e.stopPropagation()
+        e.nativeEvent.stopPropagation()
         let index = e.target.getAttribute('index');
         console.log(index)
         this.setState({
@@ -50,23 +50,44 @@ export default class SelectComponent extends React.Component {
             this.props.changeOption(obj[[this.props.val]],obj[this.props.showName]);
         }
     }
-    componentDidMount(){
-        document.addEventListener('click',() => {
-            if(this.state.listShow){
-                this.setState({
-                    listShow:false
-                })
-            }
-        },true)
-    }
-    componentWillUnmount(){
-        document.removeEventListener('click',() => {
-            if(this.state.listShow){
-                this.setState({
-                    listShow:false
-                })
-            }
-        },true)
+    // componentDidMount(){
+    //     document.body.addEventListener('click',() => {
+    //         if(this.state.listShow){
+    //             this.setState({
+    //                 listShow:false
+    //             })
+    //         }
+    //     },true)
+    // }
+    // componentWillUnmount(){
+    //     document.body.removeEventListener('click',() => {
+    //         if(this.state.listShow){
+    //             this.setState({
+    //                 listShow:false
+    //             })
+    //         }
+    //     },true)
+    // }
+    getOptionList() {
+        if(this.state.listShow) {
+            return(
+            <div className="select_option">
+                {this.state.data.map((item,index) => {
+                    return (
+                        <div className="option_item"
+                            key={index} data-val={item[this.props.val]} 
+                            onClick={e => {alert(1);this.choiceOption(e)} }
+                            index={index}
+                            >
+                                {item[this.props.showName]}
+                        </div>
+                    )
+                    }
+                )}
+            </div>)}
+        else{
+            return ''
+        }
     }
     render() {
         return (
@@ -80,27 +101,15 @@ export default class SelectComponent extends React.Component {
                     </div>
                     <div className="select_body" 
                         onClick={
-                            e => {e.stopPropagation();
-                            this.setState({listShow:!this.state.listShow});
-                            e.preventDefault();console.log(e)}
+                            e => {
+                                e.stopPropagation();
+                                this.setState({listShow:!this.state.listShow});
+                            }
                         }>
                     <div className="select_choice">
                         {this.state.choice[this.props.showName]}
                     </div>
-                    {this.state.listShow ? (
-                        <div className="select_option">
-                            {this.state.data.map((item,index) => {
-                            return (
-                                <div className="option_item"
-                                 key={index} data-val={item[this.props.val]} 
-                                 onClick={e => this.choiceOption(e)} 
-                                 index={index}
-                                 >
-                            {item[this.props.showName]}
-                            </div>)
-                            }
-                        )}
-                    </div>):''}
+                    {this.getOptionList()}
                 </div>
             </div>
         )
