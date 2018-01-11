@@ -1,6 +1,8 @@
-import echarts from 'echarts';
+//import echarts from 'echarts';
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
+
+import SelectComponent from './Select.Component'
 
 
 export default class LineChartComponent extends React.Component {
@@ -37,6 +39,31 @@ export default class LineChartComponent extends React.Component {
                             saveAsImage: {}
                         }
                     },
+                    dataZoom: [{
+                        textStyle: {
+                            color: '#8392A5'
+                        },
+                        handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+                        handleSize: '80%',
+                        dataBackground: {
+                            areaStyle: {
+                                color: '#8392A5'
+                            },
+                            lineStyle: {
+                                opacity: 0.8,
+                                color: '#8392A5'
+                            }
+                        },
+                        handleStyle: {
+                            color: '#fff',
+                            shadowBlur: 3,
+                            shadowColor: 'rgba(0, 0, 0, 0.6)',
+                            shadowOffsetX: 2,
+                            shadowOffsetY: 2
+                        }
+                    }, {
+                        type: 'inside'
+                    }],
                     xAxis: {
                         type: 'category',
                         boundaryGap: false,
@@ -212,33 +239,38 @@ export default class LineChartComponent extends React.Component {
             }
             
         }
+        dealSelectChange(val){
+            console.log(val)
+        }
         render() {
             return ( <div className = "chart_wrapper">
                  {
-                    this.props.title ? (
-                        <div className="chart_title">
-                            <span className={this.state.act?'act':''} onClick={(e) => {this.clickSpan(e)}}> 选项1 </span> / 
-                            <span className={this.state.act?'':'act'} onClick={(e) => {this.clickSpan(e)}}> 选项2 </span>
-                        </div>
-                    ) : '123'
+                    // this.props.title ? (
+                    //     <div className="chart_title">
+                    //         <span className={this.state.act?'act':''} onClick={(e) => {this.clickSpan(e)}}> 选项1 </span> / 
+                    //         <span className={this.state.act?'':'act'} onClick={(e) => {this.clickSpan(e)}}> 选项2 </span>
+                    //     </div>
+                    // ) : '123'
                 }
-                <div className="select_wrapper">
-                <label>城市：</label>
-                <div style={{display:'inlineBlock'}}>成都</div>
-                <select onChange={(e) => this.changeFirst(e)}>
-                    <option value="1">
-                        成都
-                    </option>
-                    <option  value="2">
-                        重庆
-                    </option>
-                    <option  value="3">
-                        昆明
-                    </option>
-                    <option  value="4">
-                        贵阳
-                    </option>
-                </select>
+                <div className="select_list_wrapper">
+                    <SelectComponent style={{width:'150px'}} title="城市：" val="id" data={[
+                        {id:123,name:'成都'},
+                        {id:124,name:'重庆'},
+                        {id:125,name:'攀枝花'},
+                        {id:126,name:'贵阳'}
+                    ]} showName="name" changeOption={this.dealSelectChange}/>
+                    <SelectComponent  style={{width:'150px'}} title="钢厂：" val="id" data={[
+                        {id:123,name:'成都'},
+                        {id:124,name:'重庆'},
+                        {id:125,name:'攀枝花'},
+                        {id:126,name:'贵阳'}
+                    ]} showName="name" changeOption={this.dealSelectChange}/>
+                    <SelectComponent title="钢厂：" val="id" data={[
+                        {id:123,name:'成都'},
+                        {id:124,name:'重庆'},
+                        {id:125,name:'攀枝花'},
+                        {id:126,name:'贵阳'}
+                    ]} showName="name" changeOption={this.dealSelectChange}/>
                 </div>
                 <ReactEcharts 
                 ref={e => {this.curChart = e}}
@@ -248,3 +280,5 @@ export default class LineChartComponent extends React.Component {
             }
 
         }
+
+        // <div style={{display:'inlineBlock'}} onClick={e => this.showList()}>成都</div>

@@ -29,7 +29,7 @@ module.exports = {
         //html入口文件
         ...getHtmlConf,
         //清空dist文件夹
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['./dist']),
         //调试热更新插件
         new webpack.HotModuleReplacementPlugin(),
         //开启js压缩

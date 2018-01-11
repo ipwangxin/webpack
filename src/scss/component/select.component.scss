@@ -1,0 +1,46 @@
+.select_wrapper{
+    display: inline-block;
+    text-align: left;
+    
+    height: 40px;
+    line-height: 40px;
+
+    &>div{
+        display: inline-block;
+    }
+    .seletc_title{
+        padding: 0 10px;
+        color:#999;
+
+    }
+    .select_body{
+        position: relative;
+        .select_choice{
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            line-height: 30px;
+            margin-top: 5px;
+        }
+
+        .select_option{
+            box-sizing: border-box;
+            z-index: 100;
+            position: absolute;
+            left: 0;
+            top:100%;
+            background: #fff;
+            line-height: 30px;
+            min-width: 100%;
+            .option_item{
+                white-space: nowrap;
+                padding:0 10px;
+
+                &:hover{
+                    color:#fff;
+                    background: green;
+                }
+            }
+        }
+    }
+}
