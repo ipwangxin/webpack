@@ -11,6 +11,9 @@ export default class LineChartComponent extends React.Component {
         constructor(props) {
             super(props)
             this.state = {
+                show1:false,
+                show2:false,
+                show3:false,
                 act: 0,
                 options: {
                     title: {
@@ -230,6 +233,26 @@ export default class LineChartComponent extends React.Component {
             }
             );
         }
+        componentDidMount(){
+        document.body.addEventListener('click',(e) => {
+            console.log(e.target)
+            if(this.state.listShow){
+                this.setState({
+                    listShow:false
+                })
+            }
+        },true)
+    }
+    componentWillUnmount(){
+        document.body.removeEventListener('click',(e) => {
+            console.log(e.target)
+            if(this.state.listShow){
+                this.setState({
+                    listShow:false
+                })
+            }
+        },true)
+    }
         clickSpan(e) {
             if(e.target.className.indexOf('act')==-1){
                 this.setState({
@@ -258,19 +281,19 @@ export default class LineChartComponent extends React.Component {
                         {id:124,name:'重庆'},
                         {id:125,name:'攀枝花'},
                         {id:126,name:'贵阳'}
-                    ]} showName="name" changeOption={this.dealSelectChange}/>
+                    ]} showName="name" show={this.state.show3} changeOption={this.dealSelectChange}/>
                     <SelectComponent  style={{width:'150px'}} title="钢厂：" val="id" data={[
                         {id:123,name:'成都'},
                         {id:124,name:'重庆'},
                         {id:125,name:'攀枝花'},
                         {id:126,name:'贵阳'}
-                    ]} showName="name" changeOption={this.dealSelectChange}/>
+                    ]} showName="name" show={this.state.show2} changeOption={this.dealSelectChange}/>
                     <SelectComponent title="钢厂：" val="id" data={[
                         {id:123,name:'成都'},
                         {id:124,name:'重庆'},
                         {id:125,name:'攀枝花'},
                         {id:126,name:'贵阳'}
-                    ]} showName="name" changeOption={this.dealSelectChange}/>
+                    ]} showName="name" show={this.state.show1} changeOption={this.dealSelectChange}/>
                 </div>
                 <ReactEcharts 
                 ref={e => {this.curChart = e}}

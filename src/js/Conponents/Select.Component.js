@@ -29,9 +29,10 @@ export default class SelectComponent extends React.Component {
         super(props)
         this.state = {
             data:this.props.data,
-            listShow: false,
             choiceIndex: 0,
-            choice:this.props.data[0]
+            choice:this.props.data[0],
+            listShow:this.props.show,
+
         }
     }
     choiceOption(e) {
@@ -76,7 +77,7 @@ export default class SelectComponent extends React.Component {
                     return (
                         <div className="option_item"
                             key={index} data-val={item[this.props.val]} 
-                            onClick={e => {alert(1);this.choiceOption(e)} }
+                            onClick={e => {this.choiceOption(e)} }
                             index={index}
                             >
                                 {item[this.props.showName]}
@@ -94,7 +95,6 @@ export default class SelectComponent extends React.Component {
             <div 
                 className="select_wrapper" 
                 style={this.props.style} 
-                onClick={e => e.stopPropagation()}
                 >
                     <div className="seletc_title">
                         {this.props.title}
@@ -103,6 +103,7 @@ export default class SelectComponent extends React.Component {
                         onClick={
                             e => {
                                 e.stopPropagation();
+                                e.nativeEvent.stopImmediatePropagation();
                                 this.setState({listShow:!this.state.listShow});
                             }
                         }>
