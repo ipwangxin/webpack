@@ -1,14 +1,16 @@
-import '../scss/index.scss'
-// import '../scss/abc.scss'
-// import '../scss/css.css'
-import '../assets/images/1223.jpg'
-import LineChartComponent from './Conponents/Linechart.Component'
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// Render the main component into the dom
-ReactDOM.render(<LineChartComponent title="true"/>, document.getElementById('app'));
+import '../scss/index.scss'
 
-// import 'normalize.css'；
+import LineChart from './Conponents/linechart/linechart';
+import GuessPrice from './Conponents/guessPrice/guessPrice';
+
+
+
+// Render the main component into the dom
+ReactDOM.render((<div className="a">
+<GuessPrice />
+<LineChart title="true"/>
+</div>), document.getElementById('app'));
 console.log('成功')
