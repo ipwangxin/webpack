@@ -3,3 +3,13 @@
     flex-direction: row;
     justify-content: center;
 }
+.guess{
+    width:100%;
+    background: #f9f9f9;
+    height: 627px;
+    .guess_title{
+        text-align: center;
+        font-size: 22px;
+        color: #656565;
+    }
+}

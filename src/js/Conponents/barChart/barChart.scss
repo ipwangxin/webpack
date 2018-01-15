@@ -1,25 +1,36 @@
 .bar_wrapper{
-    width: 150px;
-    height: 200px;
-    background: #eee;
+    width: 280px;
+    height: 360px;
+    position: relative;
     border-radius: 5px;
+    background: #fff;
     text-align: center;
     margin: 20px;
 
-    button{
+    div.div_btn{
         height: 32px;
-        line-height: 30px;
+        line-height: 32px;
         color: #f00;
         width:100px;
         font-size: 16px;
         cursor: pointer;
         outline: none;
-        border-radius: 3px;
+        border-radius: 16px;
         border: 1px solid #ccc;
         background: #fff;
+        margin: 23px auto;
 
         &:active{
             background: #eee;
         }
+    }
+    span.bar_list_title{
+        font-size: 20px;
+        font-weight: 600;
+        position: absolute;
+        left: 0;
+        top:230px;
+        width:100%;
+        text-align: center;
     }
 }

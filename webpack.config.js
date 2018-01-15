@@ -14,7 +14,7 @@ module.exports = {
     entry: getJsEntry,
     output: {
         filename: 'js/[name].[hash].js',
-        //publicPath:"/",
+        publicPath:"/",
         path: path.resolve(process.cwd(), 'dist')
     },
     devtool: 'source-map', //源文件报错
@@ -70,7 +70,7 @@ module.exports = {
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
-                    'file-loader?limit=4096&name=assets/font/[name].[ext]'
+                    'file-loader?limit=4096&name=../assets/font/[name].[ext]'
                 ]
             },
             {

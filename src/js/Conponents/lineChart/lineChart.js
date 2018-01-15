@@ -371,10 +371,10 @@ export default class LineChart extends React.Component {
   render() {
     return (
       <div className="chart_wrapper" onClickCapture={e => this.fatherClick(e)}>
-        {/* this.props.title ? (     <div className="chart_title">         <span
+        {this.props.title ? (     <div className="chart_title">         <span
         className={this.state.act?'act':''} onClick={(e) => {this.clickSpan(e)}}> 选项1
         </span> /         <span className={this.state.act?'':'act'} onClick={(e) =>
-        {this.clickSpan(e)}}> 选项2 </span>     </div> ) : '123' */}
+        {this.clickSpan(e)}}> 选项2 </span>     </div> ) : '123'}
         <div className="select_list_wrapper">
           <Select
             style={{

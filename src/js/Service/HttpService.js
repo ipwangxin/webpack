@@ -2,8 +2,14 @@ export default class HttpService {
     static query(config) {
         config = config || {};
         var params = HttpService.formatParams(config.data);
+        let request;
+        if (XMLHttpRequest) {
+            request = new XMLHttpRequest();
+            }
+        else {
+            request = new ActiveXObject('Microsoft.XMLHTTP');
+        }
 
-        var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState == 4) {
                 var status = request.status;
@@ -21,12 +27,10 @@ export default class HttpService {
 
     static jsonp(config) {
         config = config || {};
-
         var params = HttpService.formatParams(config.data);
         var Scrip=document.createElement('script');
         Scrip.src = config.url + "?" + params + '&jsoncallback=' + 'HttpService.jsonpCallback';
         this.callback = config.success;
-
         document.body.appendChild(Scrip);
     }
 
@@ -37,8 +41,14 @@ export default class HttpService {
     static save(config) {
         config = config || {};
 
-        var params = HttpService.formatParams(config.data);
-        var request = new XMLHttpRequest();
+        let params = HttpService.formatParams(config.data);
+        let request;
+        if (XMLHttpRequest) {
+            request = new XMLHttpRequest();
+            }
+        else {
+            request = new ActiveXObject('Microsoft.XMLHTTP');
+        }
         request.onreadystatechange = function () {
             if (request.readyState == 4) {
                 var status = request.status;

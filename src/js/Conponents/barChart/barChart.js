@@ -9,52 +9,110 @@ import './barChart.scss'
 
 // The usage of ReactEchartsCore are same with above.
 
+var percent =60;
+
+function getData() {
+    return [{
+        value: percent,
+        itemStyle: {
+            normal : {"color":  '#ff8d7c'
+            }
+        }
+    },{
+        value:100 -  percent,
+        itemStyle: {
+            normal : {"color":  'transparent'
+            }
+        }
+    }
+];
+}
+
 export default class BarChart extends React.Component{
     constructor(props){
         super(props)
 
         this.state = {
             barData: {
-                tooltip: {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                backgroundColor: '#fff',
+                title: {
+                    text: (percent * 1) + '%',
+                    x: 'center',
+                    y: 'center',
+                    textStyle: {
+                        color: '#444',
+                        fontWeight: 'bolder',
+                        fontSize: 30,
+                    }
                 },
-                // legend: {
-                //     orient: 'vertical',
-                //     x: 'left',
-                //     data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
-                // },
-                series: [
-                    {
-                        name:'访问来源',
-                        type:'pie',
-                        radius: ['50%', '70%'],
-                        avoidLabelOverlap: false,
+                series: [{
+                        type: 'pie',
+                        radius: ['35%', '50%'],
+                        silent: true,
                         label: {
                             normal: {
                                 show: false,
-                                position: 'center'
-                            },
-                            emphasis: {
-                                show: true,
-                                textStyle: {
-                                    fontSize: '30',
-                                    fontWeight: 'bold'
+                            }
+                        },
+            
+                        data: [{
+                            value: 1,
+                            itemStyle: {
+                                normal : {"color":  new echarts.graphic.LinearGradient(1, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: '#ff575a'
+                                }, {
+                                    offset: 1,
+                                    color: '#ff917f'
+                                }])
                                 }
                             }
-                        },
-                        labelLine: {
+                        }],
+            
+                        animation: false
+                    },
+            
+                    {
+                        type: 'pie',
+                        radius: ['35%', '50%'],
+                        silent: true,
+                        label: {
                             normal: {
-                                show: false
+                                show: false,
                             }
                         },
-                        data:[
-                            {value:335, name:'直接访问'},
-                            {value:310, name:'邮件营销'},
-                            {value:234, name:'联盟广告'},
-                            {value:135, name:'视频广告'},
-                            {value:1548, name:'搜索引擎'}
-                        ]
+            
+                        data: [{
+                            value: 1,
+                            itemStyle: {
+                                normal : {"color":  new echarts.graphic.LinearGradient(1, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: '#ff575a'
+                                }, {
+                                    offset: 1,
+                                    color: '#ff917f'
+                                }])
+                                }
+                            }
+                        }],
+            
+                        animation: false
+                    },
+            
+                    {
+                        name: 'main',
+                        type: 'pie',
+                        radius: ['54%', '56%'],
+                        startAngle: 225,
+                        label: {
+                            normal: {
+                                show: false,
+                            }
+                        },
+                        data: getData(),
+            
+                        animationEasingUpdate: 'cubicInOut',
+                        animationDurationUpdate: 1000
                     }
                 ]
             }
@@ -71,9 +129,10 @@ export default class BarChart extends React.Component{
             notMerge={true}
             lazyUpdate={true}
             theme={"theme_name"}
-            style={{width:'150px',height:'150px'}} />
+            style={{width:'280px',height:'280px'}} />
+            <span className="bar_list_title" style={{color:this.props.color}}> - {this.props.children} -</span>
 
-            <button>{this.props.children}</button>
+            <div className="div_btn">我要{this.props.children}</div>
             </div>  
     }
 }
