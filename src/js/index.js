@@ -5,11 +5,12 @@ import '../scss/index.scss'
 
 import LineChart from './Conponents/linechart/linechart';
 import GuessPrice from './Conponents/guessPrice/guessPrice';
+import AppListHead from './Conponents/appListHead/appListHead'
 
 
 
 // Render the main component into the dom
-ReactDOM.render((<div className="a">
+ReactDOM.render((<div className="wapper">
     <header className="header">
         <div className="public_reporter">
             <div className="newer_repoeter container">
@@ -35,7 +36,49 @@ ReactDOM.render((<div className="a">
     </header>
     <div className="app_intr"></div>
     <GuessPrice />
-    <LineChart title="true"/>
-    <LineChart title="true"/>
+
+    <main>
+        <div className="main_item_warp map">
+            <div className="container">
+                <AppListHead title={"报价地图"}>主流市场钢厂价格走势一目了然</AppListHead>
+                
+                <div className="fa-line-chart">
+                    <LineChart />
+                </div>
+            </div>
+        </div>
+        <div className="main_item_warp index">
+            <div className="container">
+                <AppListHead title={"价格指数"}>看穿真正的市场行情</AppListHead>
+                <div className="fa-line-chart">
+                    <LineChart />
+                </div>
+            </div>
+        </div>
+        <div className="main_item_warp climate">
+            <div className="container">
+            <AppListHead title={"景气指数"}>真实反映区域市场成交市态</AppListHead>
+                <div className="fa-line-chart">
+                    <LineChart />
+                </div>
+            </div>
+        </div>
+        <div className="main_item_warp stock">
+            <div className="container">
+            <AppListHead title={"库存指数"}>提供更好的行情分析依据</AppListHead>
+                <div className="fa-line-chart">
+                    <LineChart />
+                </div>
+            </div>
+        </div>
+        <div className="main_item_warp datacenter">
+            <div className="container">
+            <AppListHead title={"数据中心"}>挖掘数据的价值助力市场判断</AppListHead>
+                <div className="fa-line-chart">
+                    <LineChart />
+                </div>
+            </div>
+        </div>
+    </main>
 </div>), document.getElementById('app'));
 console.log('成功')

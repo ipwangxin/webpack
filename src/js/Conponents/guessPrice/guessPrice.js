@@ -22,7 +22,10 @@ export default class GuessPrice extends React.Component {
 
     render() {
         return <div className="guess">
+        <span className="icon_title_top"></span>
         <div className="guess_title">下周行情预判</div>
+        <div className="guess_title_time">2017/11/24</div>
+        <div className="history_entry"><span>查看历史</span></div>
         <div className="guess_wrapper container">
         <BarChart color={'#ff917f'}>看涨</BarChart>
         <BarChart color={'#8bd7ff'}>看平</BarChart>

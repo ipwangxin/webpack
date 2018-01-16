@@ -1,8 +1,7 @@
 .chart_wrapper{
-    width: 800px;
+    width: 620px;
     margin: 0 auto;
     text-align: center;
-    background:rgb(250, 250, 250);
     color: #fff;
 
     .chart_title{
@@ -18,6 +17,57 @@
         color: #666;
         text-align: left;
         font-size: 14px;
+        position: relative;
+
+        .more_data_app{
+            position: absolute;
+            top: 0;
+            right:0;
+            color: #999;
+            &:hover .more_data_modal{
+                display: block;
+            }
+
+            .more_data_modal{
+                display: none;
+                position: absolute;
+                top:-260px;
+                right: -15px;
+                width: 188px;
+                height: 251px;
+                box-sizing: border-box;
+                padding: 21px;
+                color: #333;
+                background: #fff;
+                box-shadow: 1px 1px 20px #eee;
+                border-radius: 6px;
+                font-size: 14px;
+                line-height: 24px;
+
+                p{
+                    margin: 0;
+                    padding: 0;
+                }
+                img{
+                    margin-top: 10px;
+                }
+
+                &:after{
+                    display: inline-block;
+                    content: ' ';
+                    position: absolute;
+                    border-width: 16px 12px;
+                    border-color: #fff transparent transparent  transparent;
+                    border-style: solid; 
+                    position: absolute;
+                    top:100%;
+                    left:85px;
+                }
+
+                
+            }
+        }
 
     }
+    
 }

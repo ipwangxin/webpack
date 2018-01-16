@@ -1,0 +1,32 @@
+.main_item_header{
+    position: relative;
+    padding-left: 50px;
+
+    .main_item_title {
+        // position: absolute;
+        display: inline-block;
+        color: #333;
+        height: 32px;
+        font-size: 24px;
+        line-height: 32px;
+        // left: 28px;
+    }
+    .diagonal {
+        display: inline-block;
+        vertical-align: top;
+        // position: absolute;
+        // height: 36px;
+        font-size: 36px;
+        font-weight: 100;
+        color: #e5e5e5;
+        // left: 190px;
+    }
+    .main_item_intro{
+        position: absolute;
+        color: #999;
+        height: 16px;
+        font-size: 16px;
+        left: 157px;
+        top:20px;
+    }
+}

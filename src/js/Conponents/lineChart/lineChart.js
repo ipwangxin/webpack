@@ -371,10 +371,10 @@ export default class LineChart extends React.Component {
   render() {
     return (
       <div className="chart_wrapper" onClickCapture={e => this.fatherClick(e)}>
-        {this.props.title ? (     <div className="chart_title">         <span
+        {/* this.props.title ? (     <div className="chart_title">         <span
         className={this.state.act?'act':''} onClick={(e) => {this.clickSpan(e)}}> 选项1
         </span> /         <span className={this.state.act?'':'act'} onClick={(e) =>
-        {this.clickSpan(e)}}> 选项2 </span>     </div> ) : '123'}
+        {this.clickSpan(e)}}> 选项2 </span>     </div> ) : null */}
         <div className="select_list_wrapper">
           <Select
             style={{
@@ -445,7 +445,17 @@ export default class LineChart extends React.Component {
             showName="name"
             show={this.state.show1}
             changeOption={this.dealSelectChange}/>
+            <div className="more_data_app">
+          <span className="icon"></span>
+            更多数据
+            <div className="more_data_modal">
+              <p>扫一扫下载APP</p>
+              <p>即刻查看更多数据！</p>
+              <img src={require("./../../../assets/images/two_code.png")} alt=""/>
+            </div>
         </div>
+        </div>
+        
         <ReactEchartsCore
           ref={e => {
           this.curChart = e
@@ -453,8 +463,8 @@ export default class LineChart extends React.Component {
         echarts={echarts}
           option={this.state.options}
           style={{
-          height: '400px',
-          width: '800px'
+          height: '350px',
+          width: '620px'
         }}/>
       </div>
     )
