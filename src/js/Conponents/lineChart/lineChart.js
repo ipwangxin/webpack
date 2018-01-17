@@ -445,9 +445,9 @@ export default class LineChart extends React.Component {
             showName="name"
             show={this.state.show1}
             changeOption={this.dealSelectChange}/>
-            <div className="more_data_app">
+            <div className="more_data_app"><a href="#app"><span className="folder"></span>
           <span className="icon"></span>
-            更多数据
+            更多数据</a>
             <div className="more_data_modal">
               <p>扫一扫下载APP</p>
               <p>即刻查看更多数据！</p>

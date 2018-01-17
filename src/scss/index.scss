@@ -1,3 +1,8 @@
+html,body{
+    padding:0;
+    margin: 0;
+}
+
 .container {
     width: 1300px;
     margin: 0 auto;
@@ -13,7 +18,16 @@
         .newer_repoeter {
             color: #fff;
             line-height: 60px;
-            text-indent: 43px;
+            text-indent: 3px;
+            .icon_reporter{
+                display: inline-block;
+                width:22px;
+                height: 28px;
+                background: url('./../assets/images/icon/notice.png') no-repeat;
+                vertical-align: middle;
+                transform: translateY(-2px);
+                margin-right: 18px;
+            }
             .more_reporter {
                 font-size: 14px;
                 text-decoration: underline;
@@ -28,6 +42,40 @@
         color: #999;
         margin-top: 26px;
         position: relative;
+
+        .logo_img{
+            display: inline-block;
+            width: 184px;
+            height: 48px; 
+            background: url('./../assets/images/logo.png') no-repeat;
+            vertical-align: middle;
+            
+        }
+        .logo_title{
+            padding-left: 12px;
+            margin-left: 12px;
+            position: relative;
+
+            display: inline-block;
+            vertical-align: middle;
+            a{
+                color: #999;
+                text-decoration: none;
+                &:hover{
+                    color: #999999 !important;;
+                }
+            }
+
+            &::after{
+                content: ' ';
+                width:1px;
+                border-left: 2px solid #f4f4f4;
+                position: absolute;
+                left: 0;
+                height: 28px;
+                top:10px;
+            }
+        }
     }
     .friends_link {
         margin: 0;
@@ -96,4 +144,109 @@ main {
             background: url('./../assets/images/datacenter.png') no-repeat;
         }
     }
+}
+
+a:hover{
+    color: #73bdff!important;
+}
+.more_data_app:hover {
+    color: #73bdff!important;
+}
+
+
+// footer部分
+
+.footer{
+    min-height: 170px;
+    width:100%;
+    background: #f9f9f9;
+    position: relative;
+    color: #666;
+
+    a{
+        text-decoration: none;
+    }
+    p{
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.foot-left{
+    margin-left: 12%;
+    height: 20px;
+    padding-top: 22px;
+}
+.footer-content{
+    height: 180px;
+    background-color: #f9f9f9;
+}
+
+.footer-num-dis{
+    margin-top: 25px;
+}
+
+.h-bg{
+    background: url('./../assets/images/foot_logo.png') no-repeat;
+    width: 140px;
+    height: 33px;
+}
+.foot-number{
+    font-size: 30px;
+    line-height: 50px;
+}
+.foot-number span{
+    font-size: 14px;
+}
+
+.line-height{
+    line-height: 24px;
+}
+.foot-pos{
+    height: 160px;
+    top:10px;
+    position: absolute;
+    left: 65%;
+    line-height: 40px;
+}
+.about{
+    position: absolute;
+    top:10px;
+    left: 80%;
+    line-height: 20px;
+}
+.about p.title{
+    line-height: 40px;
+    
+
+    a{
+        font-size: 12px;
+    }
+}
+.about a{
+    color: inherit;
+    font-size: 13px;
+}
+.about a:hover{
+    text-decoration: underline;
+}
+.foot-pos{
+    font-size: 12px;
+}
+.foot-pos .shaoma{
+    width:100px;
+    height: 100px;
+    font-size: 16px;
+    background: url('./../assets/images/wechat_code.png') no-repeat;
+}
+
+.footer-bottom{
+    background-color: #333;
+    width:100%;
+    font-size: 13px;
+    height: 80px;
+    line-height: 80px;
+    color:#656565;
+    text-align: center;
+
 }

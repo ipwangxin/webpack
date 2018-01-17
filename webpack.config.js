@@ -64,13 +64,13 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    'file-loader?limit=4096&name=assets/images/[name].[ext]'
+                    'url-loader?limit=4096&name=assets/images/[name].[ext]'
                 ]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
-                    'file-loader?limit=4096&name=../assets/font/[name].[ext]'
+                    'url-loader?limit=4096&name=../assets/font/[name].[ext]'
                 ]
             },
             {

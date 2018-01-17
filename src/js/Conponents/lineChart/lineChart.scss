@@ -23,9 +23,23 @@
             position: absolute;
             top: 0;
             right:0;
-            color: #999;
-            &:hover .more_data_modal{
-                display: block;
+
+            a{
+                color: #999;
+                text-decoration: none;
+
+                .folder{
+                    display: inline-block;
+                    width:18px;
+                    height: 15px;
+                    margin-right: 5px;
+                    background: url('./../../../assets/images/icon/folder.png') no-repeat;
+                    background-position: center;
+                }
+            }
+            
+            &:hover a .folder{
+                background: url('./../../../assets/images/icon/folder-open.png') no-repeat;
             }
 
             .more_data_modal{

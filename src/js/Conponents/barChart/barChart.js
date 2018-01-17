@@ -34,7 +34,7 @@ export default class BarChart extends React.Component{
 
         this.state = {
             barData: {
-                backgroundColor: '#fff',
+                backgroundColor: 'transparent',
                 title: {
                     text: (percent * 1) + '%',
                     x: 'center',
@@ -42,7 +42,7 @@ export default class BarChart extends React.Component{
                     textStyle: {
                         color: '#444',
                         fontWeight: 'bolder',
-                        fontSize: 30,
+                        fontSize: 24,
                     }
                 },
                 series: [{
@@ -122,14 +122,25 @@ export default class BarChart extends React.Component{
         return this.state.barData;
     }
     render() {
+        let style = {
+            width:'280px',
+            height:'280px',
+            backgroundImage:`url(${this.props.bgImage})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition:'center'
+        }
         return <div className="bar_wrapper">
-            <ReactEchartsCore
+        <div style={style}>
+        <ReactEchartsCore
             echarts={echarts}
             option={this.getOption()}
             notMerge={true}
             lazyUpdate={true}
             theme={"theme_name"}
-            style={{width:'280px',height:'280px'}} />
+            style={{width:'280px',
+            height:'280px',backgroundColor:'transparent'}} />
+        </div>
+            
             <span className="bar_list_title" style={{color:this.props.color}}> - {this.props.children} -</span>
 
             <div className="div_btn">我要{this.props.children}</div>
