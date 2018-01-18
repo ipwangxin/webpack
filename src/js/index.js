@@ -5,7 +5,7 @@ import '../scss/index.scss'
 
 import LineChart from './Conponents/linechart/linechart';
 import GuessPrice from './Conponents/guessPrice/guessPrice';
-import AppListHead from './Conponents/appListHead/appListHead'
+import AppListHead from './Conponents/appListHead/appListHead';
 
 
 

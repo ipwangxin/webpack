@@ -16,6 +16,12 @@ export default class LineChart extends React.Component {
 
   constructor(props) {
     super(props)
+    this.changeFirst = this.changeFirst.bind(this);
+    this.changeFirst = this.changeFirst.bind(this);
+    this.changeOptions = this.changeOptions.bind(this);
+    this.clickSpan = this.clickSpan.bind(this);
+    this.dealSelectChange = this.dealSelectChange.bind(this);
+    this.fatherClick = this.fatherClick.bind(this);
     this.state = {
       show1: false,
       show2: false,
@@ -431,13 +437,16 @@ export default class LineChart extends React.Component {
             {
               id: 123,
               name: '成都'
-            }, {
+            }, 
+            {
               id: 124,
               name: '重庆'
-            }, {
+            }, 
+            {
               id: 125,
               name: '攀枝花'
-            }, {
+            }, 
+            {
               id: 126,
               name: '贵阳'
             }

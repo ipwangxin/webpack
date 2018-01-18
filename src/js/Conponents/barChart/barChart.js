@@ -28,10 +28,11 @@ function getData() {
 ];
 }
 
-export default class BarChart extends React.Component{
+export default class BarChart extends React.Component {
+    
     constructor(props){
         super(props)
-
+        this.getOption = this.getOption.bind(this);
         this.state = {
             barData: {
                 backgroundColor: 'transparent',
@@ -118,9 +119,11 @@ export default class BarChart extends React.Component{
             }
         }
     }
+
     getOption() {
         return this.state.barData;
     }
+
     render() {
         let style = {
             width:'280px',

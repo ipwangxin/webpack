@@ -1,5 +1,28 @@
-html,body{
-    padding:0;
+::-webkit-scrollbar {
+    width: 0px;
+    height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+html {
+    -ms-overflow-style: none;
+    //overflow: -moz-scrollbars-none;
+}
+
+html::-webkit-scrollbar {
+    width: 0px
+}
+
+
+
+html,
+body {
+    padding: 0;
     margin: 0;
 }
 
@@ -19,9 +42,9 @@ html,body{
             color: #fff;
             line-height: 60px;
             text-indent: 3px;
-            .icon_reporter{
+            .icon_reporter {
                 display: inline-block;
-                width:22px;
+                width: 22px;
                 height: 28px;
                 background: url('./../assets/images/icon/notice.png') no-repeat;
                 vertical-align: middle;
@@ -42,38 +65,35 @@ html,body{
         color: #999;
         margin-top: 26px;
         position: relative;
-
-        .logo_img{
+        .logo_img {
             display: inline-block;
             width: 184px;
-            height: 48px; 
+            height: 48px;
             background: url('./../assets/images/logo.png') no-repeat;
             vertical-align: middle;
-            
         }
-        .logo_title{
+        .logo_title {
             padding-left: 12px;
             margin-left: 12px;
             position: relative;
-
             display: inline-block;
             vertical-align: middle;
-            a{
+            a {
                 color: #999;
                 text-decoration: none;
-                &:hover{
-                    color: #999999 !important;;
+                &:hover {
+                    color: #999999 !important;
+                    ;
                 }
             }
-
-            &::after{
+            &::after {
                 content: ' ';
-                width:1px;
+                width: 1px;
                 border-left: 2px solid #f4f4f4;
                 position: absolute;
                 left: 0;
                 height: 28px;
-                top:10px;
+                top: 10px;
             }
         }
     }
@@ -120,7 +140,6 @@ main {
         .container {
             position: relative;
             padding-top: 42px;
-            
             .fa-line-chart {
                 position: absolute;
                 right: 75px;
@@ -129,7 +148,6 @@ main {
         }
         &.map {
             background: url('./../assets/images/map.png') no-repeat;
-            
         }
         &.index {
             background: url('./../assets/images/index.png') no-repeat;
@@ -146,107 +164,112 @@ main {
     }
 }
 
-a:hover{
+a:hover {
     color: #73bdff!important;
 }
+
 .more_data_app:hover {
     color: #73bdff!important;
 }
 
-
 // footer部分
-
-.footer{
+.footer {
     min-height: 170px;
-    width:100%;
+    width: 100%;
     background: #f9f9f9;
     position: relative;
     color: #666;
-
-    a{
+    a {
         text-decoration: none;
     }
-    p{
+    p {
         padding: 0;
         margin: 0;
     }
 }
 
-.foot-left{
+.foot-left {
     margin-left: 12%;
     height: 20px;
     padding-top: 22px;
 }
-.footer-content{
+
+.footer-content {
     height: 180px;
     background-color: #f9f9f9;
 }
 
-.footer-num-dis{
+.footer-num-dis {
     margin-top: 25px;
 }
 
-.h-bg{
+.h-bg {
     background: url('./../assets/images/foot_logo.png') no-repeat;
     width: 140px;
     height: 33px;
 }
-.foot-number{
+
+.foot-number {
     font-size: 30px;
     line-height: 50px;
 }
-.foot-number span{
+
+.foot-number span {
     font-size: 14px;
 }
 
-.line-height{
+.line-height {
     line-height: 24px;
 }
-.foot-pos{
+
+.foot-pos {
     height: 160px;
-    top:10px;
+    top: 10px;
     position: absolute;
     left: 65%;
     line-height: 40px;
 }
-.about{
+
+.about {
     position: absolute;
-    top:10px;
+    top: 10px;
     left: 80%;
     line-height: 20px;
 }
-.about p.title{
-    line-height: 40px;
-    
 
-    a{
+.about p.title {
+    line-height: 40px;
+    a {
         font-size: 12px;
     }
 }
-.about a{
+
+.about a {
     color: inherit;
     font-size: 13px;
 }
-.about a:hover{
+
+.about a:hover {
     text-decoration: underline;
 }
-.foot-pos{
+
+.foot-pos {
     font-size: 12px;
 }
-.foot-pos .shaoma{
-    width:100px;
+
+.foot-pos .shaoma {
+    width: 100px;
     height: 100px;
     font-size: 16px;
     background: url('./../assets/images/wechat_code.png') no-repeat;
 }
 
-.footer-bottom{
+.footer-bottom {
     background-color: #333;
-    width:100%;
+    width: 100%;
     font-size: 13px;
     height: 80px;
     line-height: 80px;
-    color:#656565;
+    color: #656565;
     text-align: center;
-
 }
