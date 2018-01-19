@@ -11,21 +11,44 @@
 .guess_result{
     width:678px;
     height: 330px;
-    position: absolute;
+    position: fixed;
     left: 50%;
     margin-left: -339px;
-    top: 187px;
+    top: 40%;
+    margin-top: -165px;
     background: #fff;
     z-index: 10000;
 
     .modal_header{
         text-align: left;
-        height: 50px;
-        line-height: 50px;
+        height: 49px;
+        font-size: 18px;
+        line-height: 49px;
         background: #51ABFF;
         color: #fff;
+        position: relative;
+        text-indent: 2em;
 
-        
+
+        span{
+            position: absolute;
+            top: 50%;
+            
+            &.icon_modal_left{
+                margin-top: -8px;
+                left: 18px;
+                width: 12px;
+                height: 16px;
+                background: url('./../../../assets/images/icon/model_header_icon.png') no-repeat;
+            }
+            &.icon_modal_right{
+                margin-top: -7px;
+                width: 14px;
+                height: 14px;
+                background: url('./../../../assets/images/icon/close.png') no-repeat;
+                right: 18px;
+            }
+        }
     }
     .model_body{
         text-align: left;
@@ -33,11 +56,13 @@
             box-sizing: border-box;
             padding-left: 20px;
             
+            
             font-size: 14px;
             color: #666;
             li:first-child{
-                
-                font-size: 13px;
+                &:after{
+                    border-bottom:none;
+                }
                 >span{
                     color: #999!important;
                 }
@@ -47,6 +72,22 @@
                 list-style:none;
                 height: 50px;
                 line-height: 50px;
+                position: relative;
+
+                &:after{
+                    content: ' ';
+                    height: 1px;
+                    position: absolute;
+                    width: 90%;
+                    left: 13px;
+                    bottom:0;
+                    border-bottom: 1px solid #fafafa;
+                }
+                &:last-child{
+                    &:after{
+                        border-bottom:none;
+                    }
+                }
                 &>span{
                     display: inline-block;
                 }
@@ -66,9 +107,10 @@
                 }
                 .li_time{
                     width:260px;
+                    color: #666;
                 }
                 .li_rise,.li_wave,.li_reduce{
-                    width:108px;
+                    width:117px;
                     text-align: center;
                 }
                 .li_rise{

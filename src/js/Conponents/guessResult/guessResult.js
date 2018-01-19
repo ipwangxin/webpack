@@ -2,10 +2,15 @@ import React from 'react';
 
 import './guessResult.scss';
 
+import httpUtil from './../../Service/httpUtil'
+
 
 export default class GuessResult extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            list:[]
+        }
         this.changeBodyStyle = this.changeBodyStyle.bind(this)
         this.hiddenModal = this.hiddenModal.bind(this)
 
@@ -17,6 +22,14 @@ export default class GuessResult extends React.Component {
     hiddenModal() {
         console.log(this)
         this.props.hindleClick()
+    }
+
+    componentWillMount() {
+        httpUtil.get('func/getResultList.json').then(data => {
+            this.setState({
+                list:data
+            })
+        })
     }
     componentWillUnmount(){
         console.log(2)
@@ -35,9 +48,10 @@ export default class GuessResult extends React.Component {
                     onMouseOver={this.changeBodyStyle}
                 >
                     <div className="modal_header">
+                        <span className="icon_modal_left"></span>
                         现货市场信心指数
+                        <span className="icon_modal_right"  onClick={this.hiddenModal}></span>
                     </div>
-
                     <div className="model_body">
                         <ul>
                             <li>
@@ -47,16 +61,19 @@ export default class GuessResult extends React.Component {
                                 <span className="li_wave">看平</span>
                                 <span className="li_reduce">看跌</span>
                             </li>
-                            <li>
-                            <span className="li_circle"><span></span></span>
-                            <span className="li_time">01月01日 ~ 01月07日</span>
-                                <span className="li_rise">25%</span>
-                                <span className="li_wave">25%</span>
-                                <span className="li_reduce">50%</span>
-                            </li>
-                            <li><span className="li_circle"><span></span></span></li>
-                            <li><span className="li_circle"><span></span></span></li>
-                            <li><span className="li_circle"><span></span></span></li>
+
+                            {  this.state.list.map((item,index) => {
+                                let startArr = item.weekStart.split('-');
+                                let endArr = item.weekEnd.split('-');
+                                return (
+                                <li key={index}>
+                                    <span className="li_circle"><span></span></span>
+                                    <span className="li_time">{startArr[1]}月{startArr[2]}日 ~ {endArr[1]}月{endArr[2]}日</span>
+                                    <span className="li_rise">{item.rise}</span>
+                                    <span className="li_wave">{item.shock}</span>
+                                    <span className="li_reduce">{item.decline}</span>
+                                </li>
+                            )})}
                         </ul>
                     </div>
                 </div>

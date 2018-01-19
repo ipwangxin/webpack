@@ -7,5 +7,4 @@ let server = 'http://221.237.162.142:12120/';                    //测试外网�
 // let server = 'http://192.168.101.1:8080/';
 
 
-
-export default server;
+export default server + '/api/v1/';
