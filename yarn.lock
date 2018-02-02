@@ -1873,6 +1873,10 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
+expose-loader@^0.7.4:
+  version "0.7.4"
+  resolved "http://registry.npm.taobao.org/expose-loader/download/expose-loader-0.7.4.tgz#9bcdd3878b5da9107930b55a03f65afe90b3314a"
+
 express@^4.16.2:
   version "4.16.2"
   resolved "http://registry.npm.taobao.org/express/download/express-4.16.2.tgz#e35c6dfe2d64b7dca0a5cd4f21781be3299e076c"
@@ -2799,6 +2803,10 @@ isomorphic-fetch@^2.1.1:
 isstream@~0.1.2:
   version "0.1.2"
   resolved "http://registry.npm.taobao.org/isstream/download/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
+
+jquery@^3.3.1:
+  version "3.3.1"
+  resolved "http://registry.npm.taobao.org/jquery/download/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.4.0"

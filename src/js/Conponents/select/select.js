@@ -50,7 +50,6 @@ export default class Select extends React.Component {
     }
     componentDidMount(){
       document.addEventListener('click',(e) => {
-          console.log("docuclick");
         if(this.state.listShow){
           this.setState({
             listShow:false
@@ -60,7 +59,6 @@ export default class Select extends React.Component {
     }
     componentWillUnmount(){
         document.removeEventListener('click',(e) => {
-          console.log("docuclick");
             if(this.state.listShow){
                 this.setState({
                     listShow:false

@@ -1,2 +1,1 @@
-
-alert('b')
+alert('这是第二个页面的alert');
