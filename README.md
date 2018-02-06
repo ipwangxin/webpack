@@ -23,7 +23,7 @@ npm i
 >  npm run build
 
 ###### 注意
-独立页面的html必须要放在src根目录下
+独立页面的html必须要放在src根目录下</br>
 js入口文件也必须放在src/js的根目录下，引入的文件则不能放在js的根目录下
 
 
