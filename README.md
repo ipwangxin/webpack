@@ -22,8 +22,15 @@ npm i
 ###### 打包
 >  npm run build
 
+###### 
+本项目融入了react和ES6语法的编译,可用于开发react的单页面或者多页面项目,若要添加其他配置，请自行修改webpack.config.js文件和webpack.prod.js文件,项目打包上线，请在打包前，根据项目上线需求，自行配置webpack.prod.js的publicPath参数。
+######
+本项目的配置基于webpack2+,若webpack版本不够，请先升级webpack版本。 
+目前本人能力有限，将在后续持续优化项目配置。 
+如果对你有用，别忘了留下你的star。
+
 ###### 注意
 独立页面的html必须要放在src根目录下</br>
-js入口文件也必须放在src/js的根目录下，引入的文件则不能放在js的根目录下
+js入口文件也必须放在src/js的根目录下，js的模块文件则不能放在js的根目录下
 
 

@@ -17,14 +17,6 @@ module.exports = {
         publicPath: "/",          //发布路径，由上线相对于项目的根目录来决定
         path: path.resolve(process.cwd(), 'dist')
     },
-    devtool: 'source-map', //源文件报错
-    devServer: {
-        hot: true, //开启HRM
-        inline: true, //开启热加载
-        open: true, //浏览器启动
-        port: 8111,
-        contentBase: './dist',              //启动目录
-    },
     plugins: [
         //html入口文件
         ...getHtmlConf,
@@ -33,7 +25,7 @@ module.exports = {
         //调试热更新插件
         new webpack.HotModuleReplacementPlugin(),
         //开启js压缩
-        // new uglify(),
+        new uglify(),
         //css额外打包
         ExtractCss,
 
@@ -83,7 +75,7 @@ module.exports = {
                     //     presets: ['env']
                     // }
                     query: {
-                        presets: ['react', 'es2015']   //支持react jsx和ES6语法编译
+                        presets: ['react', 'es2015'] //支持react jsx和ES6语法编译
                     }
                 }
             },

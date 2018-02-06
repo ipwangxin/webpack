@@ -4,7 +4,7 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config ./webpack.prod.js",
     "dev": "webpack-dev-server --watch",
     "start": "npm run dev"
   },
